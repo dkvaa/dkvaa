@@ -7,7 +7,7 @@ const ContactForm = () => {
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
   
-    const handleSubmit = (e) => {
+    const handleSubmit = (e:any) => {
       e.preventDefault();
   
       // Simulasi pengiriman data
@@ -23,46 +23,46 @@ const ContactForm = () => {
     };
   
     return (
-      <div style={styles.container}>
-        <h2>Contact Us</h2>
-        {submitted && <p style={styles.successMessage}>Your message has been sent!</p>}
-        <form onSubmit={handleSubmit} style={styles.form}>
-          <div style={styles.formGroup}>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              style={styles.input}
-            />
-          </div>
-          <div style={styles.formGroup}>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              style={styles.input}
-            />
-          </div>
-          <div style={styles.formGroup}>
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-              style={styles.textarea}
-            />
-          </div>
-          <button type="submit" style={styles.button}>Send Message</button>
-        </form>
-      </div>
-    );
+        <div style={styles.container}>
+          <h2>Contact Us</h2>
+          {submitted && <p style={styles.successMessage}>Your message has been sent!</p>}
+          <form onSubmit={handleSubmit} >
+            <div style={styles.formGroup}>
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                style={styles.input}
+              />
+            </div>
+            <div style={styles.formGroup}>
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                style={styles.input}
+              />
+            </div>
+            <div style={styles.formGroup}>
+              <label htmlFor="message">Message:</label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+                style={styles.textarea}
+              />
+            </div>
+            <button type="submit" style={styles.button}>Send Message</button>
+          </form>
+        </div>
+      );
   };
   
   const styles = {
